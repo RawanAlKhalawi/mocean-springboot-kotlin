@@ -1,0 +1,4 @@
+mocean:
+  api_key: ${MOCEAN_API_KEY}
+  api_secret: ${MOCEAN_API_SECRET}
+  from: ${MOCEAN_FROM}
