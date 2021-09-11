@@ -16,7 +16,7 @@
 import java.net.*;
 import java.io.*;
 import java.nio.channels.*;
-import java.util.Properties;
+import java.util.:Properties;
 
 public class MavenWrapperDownloader {
 
