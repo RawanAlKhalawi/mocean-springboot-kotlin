@@ -1,6 +1,6 @@
 # mocean-springboot-kotlin
 
-### Environment values 
+### Environment variables 
 ```
 APP_BOOTSTRAP_SERVER=
 MOCEAN_API_KEY=
