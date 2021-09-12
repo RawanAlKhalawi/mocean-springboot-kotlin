@@ -1,3 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers: ${APP_BOOTSTRAP_SERVER}:9092
+    consumer:
+      properties:
+        spring.json.trusted.packages: "*"
+      group-id: "notification_group_id"
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 mocean:
   api_key: ${MOCEAN_API_KEY}
   api_secret: ${MOCEAN_API_SECRET}
