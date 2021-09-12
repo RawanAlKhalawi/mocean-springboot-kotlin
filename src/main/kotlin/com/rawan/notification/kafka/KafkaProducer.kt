@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service
 class KafkaProducer @Autowired constructor(private val kafkaTemplate: KafkaTemplate<String, JsonNode>){
 
     fun sendMessage() {
-        val json: JsonNode = ObjectMapper().readTree(ClassPathResource("data.json").file)
+        val json: JsonNode = ObjectMapper().readTree(ClassPathResource("data.json").inputStream)
+
         kafkaTemplate.send(TOPIC, json["payload"])
     }
 

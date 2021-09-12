@@ -14,3 +14,14 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPIC: "NOTIFIED_USERS:1:0"
+  app:
+    container_name: app
+    build: .
+    ports:
+        - "8080:8080"
+    restart: always
+    environment:
+      APP_BOOTSTRAP_SERVER:
+      MOCEAN_API_KEY:
+      MOCEAN_API_SECRET:
+      MOCEAN_FROM:
