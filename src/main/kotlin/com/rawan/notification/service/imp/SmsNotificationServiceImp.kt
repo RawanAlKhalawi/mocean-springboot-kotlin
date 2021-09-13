@@ -20,12 +20,13 @@ class SmsNotificationServiceImp @Autowired constructor(private val moceanConfigu
     val landNumber = jsonNode.findValue("land_number").textValue()
     val blockNumber = jsonNode.findValue("block_number").textValue()
     val instrumentNumber = jsonNode.findValue("instrument_number").textValue()
+    val totalBill = jsonNode.findValue("purchased_fee").asDouble() * 0.04
         return try {
             val res = mocean.sms()
                 .setFrom(moceanConfiguration.from)
                 .setTo(jsonNode.findValue("mobile").toString())
                 .setText("عزيزي $firstName\n" +
-                        "لقد تم اصدار فاتورة عدم تسوير للقطعة ($landNumber) في المخطط ($blockNumber) بصك ($instrumentNumber).")
+                        "لقد تم اصدار فاتورة عدم تسوير للقطعة ($landNumber) في المخطط ($blockNumber) بصك ($instrumentNumber) بمبلغ $totalBill ريال.")
                 .send()
             res.status.toString()
         } catch (e: Exception) {
