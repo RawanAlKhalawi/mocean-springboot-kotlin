@@ -8,6 +8,6 @@ services:
     restart: always
     environment:
       APP_BOOTSTRAP_SERVER: 127.0.0.1
-      MOCEAN_API_KEY: 9849ad8e
-      MOCEAN_API_SECRET: 2ed9f09d
-      MOCEAN_FROM: Lalosaimi
+      MOCEAN_API_KEY:
+      MOCEAN_API_SECRET:
+      MOCEAN_FROM:
