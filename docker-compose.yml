@@ -1,19 +1,5 @@
 version: '3'
 services:
-  zookeeper:
-    image: wurstmeister/zookeeper
-    ports:
-      - 2181:2181
-    container_name: zookeeper
-  kafka:
-    image: wurstmeister/kafka
-    container_name: kafka
-    ports:
-      - 9092:9092
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPIC: "NOTIFIED_USERS:1:0"
   app:
     container_name: app
     build: .
@@ -21,7 +7,7 @@ services:
         - "8080:8080"
     restart: always
     environment:
-      APP_BOOTSTRAP_SERVER:
-      MOCEAN_API_KEY:
-      MOCEAN_API_SECRET:
-      MOCEAN_FROM:
+      APP_BOOTSTRAP_SERVER: 127.0.0.1
+      MOCEAN_API_KEY: 9849ad8e
+      MOCEAN_API_SECRET: 2ed9f09d
+      MOCEAN_FROM: Lalosaimi

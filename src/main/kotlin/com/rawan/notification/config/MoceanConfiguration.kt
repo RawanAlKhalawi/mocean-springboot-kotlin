@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConstructorBinding
 @ConfigurationProperties("mocean")
 data class MoceanConfiguration(
-    val apiKey: String,
-    val apiSecret: String,
-    val from: String,
+        val apiKey: String,
+        val apiSecret: String,
+        val from: String
 )

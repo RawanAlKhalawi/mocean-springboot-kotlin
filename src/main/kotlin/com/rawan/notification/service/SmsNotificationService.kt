@@ -1,9 +1,9 @@
 package com.rawan.notification.service
 
-import com.fasterxml.jackson.databind.JsonNode
+import org.json.JSONObject
 
 interface SmsNotificationService {
 
-    fun sendSms(jsonNode: JsonNode): String?
+    fun sendSms(payload: JSONObject): String?
 
 }
