@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${APP_BOOTSTRAP_SERVER}:9092
     consumer:
       properties:
         spring.json.trusted.packages: "*"
@@ -12,6 +12,6 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 mocean:
-  api_key: ""
-  api_secret: ""
-  from: ""
+  api_key: ${MOCEAN_API_KEY}
+  api_secret: ${MOCEAN_API_SECRET}
+  from: ${MOCEAN_FROM}
